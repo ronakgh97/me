@@ -18,8 +18,8 @@ function StarField() {
       id: i,
       x: Math.random() * 100,
       y: Math.random() * 100,
-      delay: Math.random() * 2,
-      duration: 2 + Math.random() * 3,
+      delay: Math.random() * 10,
+      duration: 1 + Math.random() * 3,
     }))
   );
 
@@ -50,29 +50,33 @@ function CRTOverlay() {
 
 // ─── BANNER ──────────────────────────────────────────────────────
 function Banner() {
+  const backgroundUrl = "./assets/4.gif";
   return (
-    <div className="text-center py-3 pixel-border bg-retro-surface mb-1">
-      <div className="flex items-center justify-center gap-3">
-        <span className="text-retro-cyan text-2xl glow-cyan" style={{ fontFamily: 'var(--font-terminal)' }}>
-          ⟪══════════════════════════════════════⟫
-        </span>
-      </div>
-      <div className="flex items-center justify-center gap-3">
-        <span className="text-retro-cyan text-2xl glow-cyan" style={{ fontFamily: 'var(--font-terminal)' }}>
-        </span>
-        <span
-          className="text-retro-pink text-sm glow-pink tracking-widest"
-          style={{ fontFamily: 'var(--font-pixel)' }}
-        >
-          ronak ghosh97
-        </span>
-        <span className="text-retro-cyan text-2xl glow-cyan" style={{ fontFamily: 'var(--font-terminal)' }}>
-        </span>
-      </div>
-      <div className="flex items-center justify-center gap-3">
-        <span className="text-retro-cyan text-2xl glow-cyan" style={{ fontFamily: 'var(--font-terminal)' }}>
-          ⟪══════════════════════════════════════⟫
-        </span>
+    <div
+      className="text-center py-3 pixel-border bg-retro-surface mb-1 bg-cover bg-center relative overflow-hidden bg-blend-screen"
+      style={{ backgroundImage: `url(${backgroundUrl})` }}
+    >
+      <div className="absolute inset-0 bg-black/30 z-0"></div>
+
+      <div className="relative z-10">
+        <div className="flex items-center justify-center gap-3 opacity-80 animate-pulse [animation-duration:4s]">
+          <span className="text-retro-cyan text-2xl glow-cyan" style={{ fontFamily: 'var(--font-terminal)' }}>
+            ══════════════════════════════════════
+          </span>
+        </div>
+        <div className="flex items-center justify-center gap-3">
+          <span
+            className="text-retro-pink text-sm glow-pink tracking-widest opacity-120 animate-pulse-glow"
+            style={{ fontFamily: 'var(--font-pixel)' }}
+          >
+            ronakgh97
+          </span>
+        </div>
+        <div className="flex items-center justify-center gap-3 opacity-60 animate-pulse [animation-duration:2s]">
+          <span className="text-retro-cyan text-2xl glow-cyan" style={{ fontFamily: 'var(--font-terminal)' }}>
+            ══════════════════════════════════════
+          </span>
+        </div>
       </div>
     </div>
   );
@@ -83,7 +87,7 @@ function Marquee() {
   return (
     <div className="pixel-border bg-retro-surface overflow-hidden py-1 mb-1">
       <div className="animate-marquee whitespace-nowrap text-retro-green text-xs" style={{ fontFamily: 'var(--font-terminal)' }}>
-        ★ Hello internet!!! ★ welcome to my corner of the internet ★ rust enthusiast & propagandist  ★ systems programmer ★ building cool stuffs ★
+        ★ Hello internet!!! ★ welcome to my site ★ rust enthusiast & propagandist  ★ systems programmer ★ building cool unless stuffs ★
       </div>
     </div>
   );
@@ -138,7 +142,7 @@ function LeftSidebar({ currentPage, setPage }: { currentPage: Page; setPage: (p:
         <span className="text-retro-green">●</span> 19yo first-year under grad
       </div>
       <div className="text-xs text-retro-dim mb-1">
-        <span className="text-retro-green">●</span> building & exploring cpu's
+        <span className="text-retro-green">●</span> building stuffs & exploring cpu's
       </div>
 
       <hr className="retro-hr" />
@@ -165,7 +169,7 @@ function LeftSidebar({ currentPage, setPage }: { currentPage: Page; setPage: (p:
         </div>
         <div className="pixel-border bg-retro-bg px-2 py-1 text-center">
           <span className="text-xs text-retro-green" style={{ fontFamily: 'var(--font-pixel)', fontSize: '8px' }}>
-            ANIME YAPPING & Pokemons battles
+            ANIME YAPPING  Pokemons battles
           </span>
         </div>
         <div className="pixel-border bg-retro-bg px-2 py-1 text-center">
@@ -175,7 +179,8 @@ function LeftSidebar({ currentPage, setPage }: { currentPage: Page; setPage: (p:
         </div>
         <div className="pixel-border bg-retro-bg px-2 py-1 text-center">
           <span className="text-xs text-retro-orange" style={{ fontFamily: 'var(--font-pixel)', fontSize: '8px' }}>
-            GFLOPS: 9997
+            GFLOPS: 99999
+            CACHE: FULL
           </span>
         </div>
       </div>
@@ -183,14 +188,14 @@ function LeftSidebar({ currentPage, setPage }: { currentPage: Page; setPage: (p:
       <hr className="retro-hr mt-2" />
 
       {/* ASCII Art */}
-      <div className="mt-2 text-retro-dim text-xs leading-tight" style={{ fontFamily: 'var(--font-terminal)' }}>
-        <pre className="text-retro-cyan opacity-60">{`
+      <div className="mt-2 animate-pulse-glow text-retro-dim text-xs leading-tight" style={{ fontFamily: 'var(--font-terminal)' }}>
+        <pre className="text-retro-cyan opacity-200">{`
                   ▀▀        
 ████▄  ▀▀█▄ ████▄ ██  ▄████ 
 ██ ██ ▄█▀██ ██ ██ ██  ██    
 ████▀ ▀█▄██ ██ ██ ██▄ ▀████ 
 ██                          
-▀▀                                                  
+▀▀                                            
 `}
         </pre>
       </div>
@@ -220,8 +225,8 @@ function RightSidebar() {
           />
         </div>
 
-        <div className="pixel-border bg-retro-bg p-2 w-full text-center animate-pulse-glow flex justify-center items-center">
-          <pre className="text-retro-orange text-xs leading-tight whitespace-pre inline-block mx-auto font-mono" style={{ fontFamily: 'var(--font-terminal)' }}>
+        <div className="pixel-border bg-retro-bg p-1 w-full text-center animate-pulse-glow flex justify-center items-center">
+          <pre className="text-retro-orange text-xs leading-tight whitespace-pre inline-block -mt-3 mx-auto font-mono" style={{ fontFamily: 'var(--font-terminal)' }}>
 
             {`
 ⣇⣿⠘⣿⣿⣿⡿⡿⣟⣟⢟⢟⢝⠵⡝⣿⡿⢂⣼⣿⣷⣌⠩⡫⡻⣝⠹⢿⣿⣷
@@ -251,7 +256,7 @@ function RightSidebar() {
           />
         </div>
 
-        <div className="pixel-border bg-retro-bg p-2 w-full relative min-h-[60px] flex items-center justify-center overflow-hidden">
+        <div className="pixel-border bg-retro-bg p-2 w-full relative min-h-[70px] flex items-center justify-center overflow-hidden">
           <img
             src="./assets/3.gif"
             alt="decor"
@@ -280,13 +285,11 @@ function AboutPage() {
           hey. i'm <span className="text-retro-cyan glow-cyan font-bold">ronak ghosh</span> — systems programmer,
           rust 'propagandist', and builder of things that should probably have been left unbuilt.
         </p>
-
         <p>
           i spend most of my time writing <span className="text-retro-orange">rust</span>. like, a lot of rust.
           databases, maths & memory libraries, networking stacks, game simulations — you name it,
           i've probably tried to rewrite it in rust.
         </p>
-
         <p>
           my main jam is building infrastructure-level dev tools & libs — things like{' '}
           <span className="text-retro-pink">distributed storage systems</span>,{' '}
@@ -295,7 +298,6 @@ function AboutPage() {
           <span className="text-retro-orange">game network libs.</span> {' '}
           i like understanding how cpus & softwares work together at a basic level.
         </p>
-
         <p>
           current projects i'm tinkering with:
         </p>
@@ -306,20 +308,18 @@ function AboutPage() {
           <li><span className="text-retro-cyan">▸</span> <span className="text-retro-yellow">ghost-sync</span> — async networking lib for game dev</li>
           <li><span className="text-retro-cyan">▸</span> <span className="text-retro-yellow">missile-sim</span> — missile guidance simulation sandbox</li>
         </ul>
-
         <p>
           i use `omarchy` btw, cuz i ain't got no time to rice shit. my editor is neovim/rustrover, my shell is ghostty,
           and my window manager is hyprland. i also play <span className="text-retro-cyan">Battlefield 2042</span> and <span className="text-retro-pink">Pokemon Showdown</span>
         </p>
-
         <p>
-          when i'm not fighting the borrow checker at 3am, i'm probably reading about cpus x86, distributed/backend systems
+          when i'm not fighting the sleep cortisol DEMON at 3am, i'm probably reading about cpus x86, distributed/backend systems
           or performance engineering. i'm also working on some ridiculous side project, or learning about yet another topic/domain that i'll implement
           from scratch for "educational purposes."
         </p>
-
         <p className="text-retro-dim">
-          long-term goal: build useful libs & systems that matter. short-term goal: get `blas-rs` to widely used library.
+          long-term goal: build useful libs & systems that matter.
+          short-term goal: get `blas-rs` to widely used and build ml libraries with it.
           shorter-term goal: maintain sleep schedule like normal human.
         </p>
       </div>
@@ -415,15 +415,14 @@ function ResumePage() {
 
       <div>
         <div className="text-retro-cyan font-bold text-sm mb-2" style={{ fontFamily: 'var(--font-pixel)', fontSize: '10px' }}>
-          ═══ What I Work With ═══
+          ═══ What I Work With/On ═══
         </div>
         <div className="flex flex-wrap gap-2 mt-2">
           {[
-            'Rust', 'C', 'C++', 'Python',
             'Graphs', 'BST', 'BLAS', 'Profiling',
-            'Linux', 'Neovim/Rustrover', 'Docker', 'Git',
-            'Distributed Systems', 'LSM DBs',
-            'Networking', 'low-level libs',
+            'Runtime', 'Docker', 'x86',
+            'Reliable Systems', 'LSM DBs',
+            'Network Protocols', 'Low-level libs',
           ].map((skill) => (
             <span
               key={skill}
@@ -659,16 +658,18 @@ function BlogPage() {
       <hr className="retro-hr" />
 
       <div className="mt-4">
-        <div className="text-retro-cyan font-bold text-sm mb-2" style={{ fontFamily: 'var(--font-pixel)', fontSize: '10px' }}>
+        <div className="text-retro-cyan font-bold text-sm mb-3" style={{ fontFamily: 'var(--font-pixel)', fontSize: '10px' }}>
           ═══ Planned Topics ═══
         </div>
         <div className="text-sm space-y-1 text-retro-dim" style={{ fontFamily: 'var(--font-mono)' }}>
-          <div>▸ implementing HNSW from scratch</div>
-          <div>▸ building a vector database in rust</div>
-          <div>▸ BLAS operations: a practical guide</div>
-          <div>▸ zero-trust distributed storage design</div>
-          <div>▸ async networking for game dev</div>
-          <div>▸ missile guidance algorithms explained</div>
+          <div>▸ implementing simplified HNSW from paper</div>
+          <div>▸ BLAS kernels: a practical guide for x86 rust</div>
+          <div>▸ zero-trust distributed storage protocol design & TLS</div>
+          <div>▸ async networking for RTS heavy game</div>
+          <div>▸ missile guidance (PPN, TPN, APN) maths explained</div>
+          <div>▸ how lsm trees can be read optimized</div>
+          <div>▸ implementing a 'safe' stack memory allocator in strict rust type systems</div>
+          <div>▸ and more...</div>
         </div>
       </div>
     </div>
@@ -724,7 +725,7 @@ export default function App() {
         <Marquee />
 
         {/* Three-column layout */}
-        <div className="grid grid-cols-1 md:grid-cols-[200px_1fr_180px] gap-2 mt-1">
+        <div className="grid grid-cols-1 md:grid-cols-[200px_1fr_180px] gap-2 mt-1 items-start">
           {/* Left sidebar */}
           <div className="order-2 md:order-1">
             <LeftSidebar currentPage={currentPage} setPage={setCurrentPage} />
