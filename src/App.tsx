@@ -357,7 +357,7 @@ function ResumePage() {
         style={{ fontFamily: 'var(--font-terminal)' }}
       >
         <a
-          href="/resume.pdf"
+          href="resume.pdf"
           target="_blank"
           rel="noopener noreferrer"
           className="hover:text-retro-yellow"
