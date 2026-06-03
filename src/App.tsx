@@ -352,6 +352,20 @@ function ResumePage() {
       </div>
       <hr className="retro-hr" />
 
+      <div
+        className="text-retro-cyan glow-cyan mb-3"
+        style={{ fontFamily: 'var(--font-terminal)' }}
+      >
+        <a
+          href="/resume.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hover:text-retro-yellow"
+        >
+          {'>'} cat resume.pdf
+        </a>
+      </div>
+
       <div className="my-4 text-sm leading-relaxed" style={{ fontFamily: 'var(--font-mono)' }}>
         <p className="text-retro-bright">
           systems programmer focused on <span className="text-retro-orange">rust</span>,{' '}
