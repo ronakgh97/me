@@ -60,7 +60,7 @@ function Banner() {
 
       <div className="relative z-10">
         <div className="flex items-center justify-center gap-3 opacity-80 animate-pulse [animation-duration:4s]">
-          <span className="text-retro-cyan text-2xl glow-cyan" style={{ fontFamily: 'var(--font-terminal)' }}>
+          <span className="text-retro-white text-2xl glow-white" style={{ fontFamily: 'var(--font-terminal)' }}>
             ══════════════════════════════════════
           </span>
         </div>
@@ -73,7 +73,7 @@ function Banner() {
           </span>
         </div>
         <div className="flex items-center justify-center gap-3 opacity-60 animate-pulse [animation-duration:2s]">
-          <span className="text-retro-cyan text-2xl glow-cyan" style={{ fontFamily: 'var(--font-terminal)' }}>
+          <span className="text-retro-white text-2xl glow-white" style={{ fontFamily: 'var(--font-terminal)' }}>
             ══════════════════════════════════════
           </span>
         </div>
@@ -139,7 +139,7 @@ function LeftSidebar({ currentPage, setPage }: { currentPage: Page; setPage: (p:
         ▸ Status
       </div>
       <div className="text-xs text-retro-dim mb-1">
-        <span className="text-retro-green">●</span> 19yo first-year under grad
+        <span className="text-retro-green">●</span> 19yo first-year cs under grad
       </div>
       <div className="text-xs text-retro-dim mb-1">
         <span className="text-retro-green">●</span> building stuffs & exploring cpu's
@@ -216,7 +216,7 @@ function RightSidebar() {
 
       <div className="flex flex-col gap-3 items-center w-full">
 
-        <div className="pixel-border bg-retro-bg p-1 w-full animate-float flex justify-center items-center overflow-hidden min-h-[64px]">
+        <div className="pixel-border bg-retro-bg p-1 w-full animate-float animate-pulse flex justify-center items-center overflow-hidden min-h-[64px]">
           <img
             src="./assets/1.gif"
             alt="Pixel Animation 1"
@@ -287,15 +287,15 @@ function AboutPage() {
         </p>
         <p>
           i spend most of my time writing <span className="text-retro-orange">rust</span>. like, a lot of rust.
-          databases, maths & memory libraries, networking stacks, game simulations — you name it,
+          databases, runtime, maths & utils libraries, networking stacks, game development — you name it,
           i've probably tried to rewrite it in rust.
         </p>
         <p>
-          my main jam is building infrastructure-level dev tools & libs — things like{' '}
-          <span className="text-retro-pink">distributed storage systems</span>,{' '}
-          <span className="text-retro-green">databases</span>,{' '}
+          my main jam is building hack/dev/utility tools & HPC kernels libs — things like{' '}
+          <span className="text-retro-pink">remote storage systems</span>,{' '}
+          <span className="text-retro-green">graph, lsm databases</span>,{' '}
           <span className="text-retro-purple">BLAS re-implementations</span>, and{' '}
-          <span className="text-retro-orange">game network libs.</span> {' '}
+          <span className="text-retro-orange">network libs.</span> {' '}
           i like understanding how cpus & softwares work together at a basic level.
         </p>
         <p>
@@ -303,14 +303,13 @@ function AboutPage() {
         </p>
         <ul className="list-none space-y-1 ml-4">
           <li><span className="text-retro-cyan">▸</span> <span className="text-retro-yellow">rdrive</span> — distributed zero-trust object storage</li>
-          <li><span className="text-retro-cyan">▸</span> <span className="text-retro-yellow">blaze-db</span> — a rust-native vector database using HNSW</li>
+          <li><span className="text-retro-cyan">▸</span> <span className="text-retro-yellow">blaze-db</span> — rust-native vector database using HNSW indexing</li>
           <li><span className="text-retro-cyan">▸</span> <span className="text-retro-yellow">blas-rs</span> — openblas implementation in rust</li>
-          <li><span className="text-retro-cyan">▸</span> <span className="text-retro-yellow">ghost-sync</span> — async networking lib for game dev</li>
-          <li><span className="text-retro-cyan">▸</span> <span className="text-retro-yellow">missile-sim</span> — missile guidance simulation sandbox</li>
+          <li><span className="text-retro-cyan">▸</span> <span className="text-retro-yellow">ghost-sync</span> — async networking lib for game dev/general utility</li>
         </ul>
         <p>
-          i use `omarchy` btw, cuz i ain't got no time to rice shit. my editor is neovim/rustrover, my shell is ghostty,
-          and my window manager is hyprland. i also play <span className="text-retro-cyan">Battlefield 2042</span> and <span className="text-retro-pink">Pokemon Showdown</span>
+          i use `omarchy` btw (DHH), cuz i ain't got no time to rice. my editor is neovim/rustrover, my shell is ghostty.
+          i also play <span className="text-retro-cyan glow-cyan">Battlefield 2042</span> alone and <span className="text-retro-pink">Pokemon Showdown</span>
         </p>
         <p>
           when i'm not fighting the sleep cortisol DEMON at 3am, i'm probably reading about cpus x86, distributed/backend systems
@@ -318,7 +317,7 @@ function AboutPage() {
           from scratch for "educational purposes."
         </p>
         <p className="text-retro-dim">
-          long-term goal: build useful libs & systems that matter.
+          long-term goal: build useful libs & systems/utilities that matter.
           short-term goal: get `blas-rs` to widely used and build ml libraries with it.
           shorter-term goal: maintain sleep schedule like normal human.
         </p>
@@ -359,7 +358,7 @@ function ResumePage() {
           <span className="text-retro-green">x86 architecture</span>,{' '}
           <span className="text-retro-green">distributed systems</span>,{' '}
           <span className="text-retro-purple">maths kernels libs</span>, and{' '}
-          <span className="text-retro-pink">hack/dev tooling</span>.
+          <span className="text-retro-pink">hack/dev/game tooling</span>.
         </p>
       </div>
 
@@ -370,7 +369,7 @@ function ResumePage() {
         <div className="text-sm space-y-1" style={{ fontFamily: 'var(--font-mono)' }}>
           <div><span className="text-retro-yellow">Languages:</span> Rust, C, Java, Python, Perl</div>
           <div><span className="text-retro-yellow">Domains & Interest:</span> Linux, Low-latency Systems, Database internals, Networking, x86 cpu architecture</div>
-          <div><span className="text-retro-yellow">Tools:</span> Git, Tokio, Clap, Docker, Linux, Criterion, Vtune profiler, WireShark</div>
+          <div><span className="text-retro-yellow">Tools:</span> Git, Tokio, Clap, Docker, Linux, Criterion, Vtune profiler, WireShark, Unreal Engine</div>
         </div>
       </div>
 
@@ -419,10 +418,10 @@ function ResumePage() {
         </div>
         <div className="flex flex-wrap gap-2 mt-2">
           {[
-            'Graphs', 'BST', 'BLAS', 'Profiling',
+            'Graphs Computation', 'BSTree', 'BLAS', 'Profiling',
             'Runtime', 'Docker', 'x86',
-            'Reliable Systems', 'LSM DBs',
-            'Network Protocols', 'Low-level libs',
+            'Reliable Systems', 'LSM DBs', 'Utilities Tooling',
+            'Network Protocols', 'Low-level libs', 'Unreal Engine'
           ].map((skill) => (
             <span
               key={skill}
@@ -449,7 +448,7 @@ function ProjectsPage() {
       stars: 10,
       forks: 1,
       url: 'https://github.com/ronakgh97/blaze-db',
-      tags: ['database', 'hnsw', 'vector-search', 'rust'],
+      tags: ['database', 'graphs', 'hnsw', 'vector-search', 'rust', 'ann', 'quantization'],
     },
     {
       name: 'rdrive',
@@ -459,7 +458,7 @@ function ProjectsPage() {
       stars: 1,
       forks: 0,
       url: 'https://github.com/ronakgh97/rdrive',
-      tags: ['distributed', 'storage', 'zero-trust', 'cas'],
+      tags: ['distributed', 'object-storage', 'zero-trust', 'TLS', 'delta-transfer'],
     },
     {
       name: 'blas-rs',
@@ -469,7 +468,7 @@ function ProjectsPage() {
       stars: 1,
       forks: 0,
       url: 'https://github.com/ronakgh97/blas-rs',
-      tags: ['blas', 'linear-algebra', 'x86', 'scientific-computing'],
+      tags: ['blas', 'linear-algebra', 'x86', 'high-performance-computing'],
     },
     {
       name: 'hnsw-rs',
@@ -479,7 +478,7 @@ function ProjectsPage() {
       stars: 1,
       forks: 0,
       url: 'https://github.com/ronakgh97/hnsw-rs',
-      tags: ['hnsw', 'ann', 'graph', 'search'],
+      tags: ['hnsw', 'ann', 'graph', 'search', 'algorithms'],
     },
     {
       name: 'ghost-sync',
@@ -489,7 +488,7 @@ function ProjectsPage() {
       stars: 3,
       forks: 0,
       url: 'https://github.com/ronakgh97/ghost-sync',
-      tags: ['networking', 'async', 'game-dev', 'multiplayer'],
+      tags: ['networking', 'async', 'game-dev'],
     },
     {
       name: 'missile-sim',
