@@ -295,7 +295,7 @@ function AboutPage() {
           <span className="text-retro-pink">remote storage systems</span>,{' '}
           <span className="text-retro-green">graph, lsm databases</span>,{' '}
           <span className="text-retro-purple">BLAS re-implementations</span>, and{' '}
-          <span className="text-retro-orange">network libs.</span> {' '}
+          <span className="text-retro-orange">network/ml compute/search libs.</span> {' '}
           i like understanding how cpus & softwares work together at a basic level.
         </p>
         <p>
@@ -303,7 +303,7 @@ function AboutPage() {
         </p>
         <ul className="list-none space-y-1 ml-4">
           <li><span className="text-retro-cyan">▸</span> <span className="text-retro-yellow">rdrive</span> — distributed zero-trust object storage</li>
-          <li><span className="text-retro-cyan">▸</span> <span className="text-retro-yellow">blaze-db</span> — rust-native vector database using HNSW indexing</li>
+          <li><span className="text-retro-cyan">▸</span> <span className="text-retro-yellow">blaze-db/hnsw-rs</span> — rust-native vector database using HNSW indexing</li>
           <li><span className="text-retro-cyan">▸</span> <span className="text-retro-yellow">blas-rs</span> — openblas implementation in rust</li>
           <li><span className="text-retro-cyan">▸</span> <span className="text-retro-yellow">ghost-sync</span> — async networking lib for game dev/general utility</li>
         </ul>
@@ -417,8 +417,8 @@ function ResumePage() {
           <div>
             <span className="text-retro-green font-bold">missile-sim</span> — <span className="text-retro-dim">Rust</span>
             <div className="text-retro-text ml-4 mt-1">
-              Missile guidance simulation/sandbox that visualizes various scenarios,
-              applies proportional navigation laws using forward kinematics.
+              Missile guidance simulation/sandbox library that help simulate/visualizes various scenarios,
+              applies proportional navigation laws using forward kinematics and guidance laws like PPN/TPN/AGN.
             </div>
           </div>
         </div>
@@ -508,11 +508,11 @@ function ProjectsPage() {
       name: 'missile-sim',
       lang: 'Rust',
       langColor: 'text-retro-orange',
-      description: 'A missile guidance simulation/sandbox that visualizes various scenarios, applies proportional navigation laws using forward kinematics.',
+      description: 'A missile guidance simulation/sandbox library that help simulate/visualizes various scenarios, applies proportional navigation laws using forward kinematics.',
       stars: 5,
       forks: 0,
       url: 'https://github.com/ronakgh97/missile-sim',
-      tags: ['simulation', 'physics', 'kinematics', 'visualization'],
+      tags: ['simulation', 'physics', 'kinematics', 'visualization', 'computational'],
     },
   ];
 
