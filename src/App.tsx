@@ -50,7 +50,7 @@ function CRTOverlay() {
 
 // ─── BANNER ──────────────────────────────────────────────────────
 function Banner() {
-  const backgroundUrl = "assets/4.gif";
+  const backgroundUrl = `${import.meta.env.BASE_URL}assets/4.gif`;
   return (
     <div
       className="text-center py-3 pixel-border bg-retro-surface mb-1 bg-cover bg-center relative overflow-hidden bg-blend-screen"
@@ -218,7 +218,7 @@ function RightSidebar() {
 
         <div className="pixel-border bg-retro-bg p-1 w-full animate-float animate-pulse flex justify-center items-center overflow-hidden min-h-[64px]">
           <img
-            src="assets/1.gif"
+            src={`${import.meta.env.BASE_URL}assets/1.gif`}
             alt="Pixel Animation 1"
             className={pixelArtCls}
             onError={(e) => e.currentTarget.style.display = 'none'}
@@ -249,7 +249,7 @@ function RightSidebar() {
 
         <div className="pixel-border bg-retro-bg p-1 w-full flex justify-center items-center overflow-hidden min-h-[64px]">
           <img
-            src="assets/2.gif"
+            src={`${import.meta.env.BASE_URL}assets/2.gif`}
             alt="Pixel Animation 2"
             className={pixelArtCls}
             onError={(e) => e.currentTarget.style.display = 'none'}
@@ -258,7 +258,7 @@ function RightSidebar() {
 
         <div className="pixel-border bg-retro-bg p-2 w-full relative min-h-[70px] flex items-center justify-center overflow-hidden">
           <img
-            src="assets/3.gif"
+            src={`${import.meta.env.BASE_URL}assets/3.gif`}
             alt="decor"
             className="absolute inset-0 w-full h-full object-cover animate-pulse-glow opacity-120 [image-rendering:pixelated]"
           />
