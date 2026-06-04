@@ -1,1 +1,1 @@
-![look](./assets/site=pic.png)
+![look](./public/assets/site=pic.png)
