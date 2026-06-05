@@ -50,7 +50,7 @@ function CRTOverlay() {
 
 // ─── BANNER ──────────────────────────────────────────────────────
 function Banner() {
-  const backgroundUrl = `${import.meta.env.BASE_URL}assets/Banner.gif`;
+  const backgroundUrl = `${import.meta.env.BASE_URL}assets/banner.gif`;
   return (
     <div
       className="text-center py-9 pixel-border bg-retro-surface mb-1 bg-cover bg-center relative overflow-hidden bg-blend-screen"
@@ -257,7 +257,7 @@ function RightSidebar() {
           />
         </div>
 
-        <div className="pixel-border bg-retro-bg p-1 w-full relative min-h-[56px] flex items-center justify-center overflow-hidden">
+        <div className="pixel-border bg-retro-bg p-1 w-full relative min-h-[64px] flex items-center justify-center overflow-hidden">
           <img
             src={`${import.meta.env.BASE_URL}assets/3.gif`}
             alt="Gifs Slot"
@@ -369,10 +369,10 @@ function ResumePage() {
 
       <div className="my-4 text-sm leading-relaxed" style={{ fontFamily: 'var(--font-mono)' }}>
         <p className="text-retro-bright">
-          systems programmer focused on <span className="text-retro-orange">rust</span>,{' '}
+          systems programmer focused on <span className="text-retro-orange">RUST</span>,{' '}
           <span className="text-retro-green">x86 architecture</span>,{' '}
-          <span className="text-retro-green">distributed systems</span>,{' '}
-          <span className="text-retro-purple">maths kernels libs</span>, and{' '}
+          <span className="text-retro-red">reliable systems architect</span>,{' '}
+          <span className="text-retro-purple">maths/network/mem kernels libs</span>, and{' '}
           <span className="text-retro-pink">hack/dev/game tooling</span>.
         </p>
       </div>
