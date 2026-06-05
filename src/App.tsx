@@ -50,10 +50,10 @@ function CRTOverlay() {
 
 // ─── BANNER ──────────────────────────────────────────────────────
 function Banner() {
-  const backgroundUrl = `${import.meta.env.BASE_URL}assets/4.gif`;
+  const backgroundUrl = `${import.meta.env.BASE_URL}assets/Banner.gif`;
   return (
     <div
-      className="text-center py-3 pixel-border bg-retro-surface mb-1 bg-cover bg-center relative overflow-hidden bg-blend-screen"
+      className="text-center py-9 pixel-border bg-retro-surface mb-1 bg-cover bg-center relative overflow-hidden bg-blend-screen"
       style={{ backgroundImage: `url(${backgroundUrl})` }}
     >
       <div className="absolute inset-0 bg-black/30 z-0"></div>
@@ -85,7 +85,7 @@ function Banner() {
 // ─── MARQUEE ─────────────────────────────────────────────────────
 function Marquee() {
   return (
-    <div className="pixel-border bg-retro-surface overflow-hidden py-1 mb-1">
+    <div className="pixel-border bg-retro-surface overflow-hidden py-1 mb-2">
       <div className="animate-marquee whitespace-nowrap text-retro-green text-xs" style={{ fontFamily: 'var(--font-terminal)' }}>
         ★ Hello internet!!! ★ welcome to my site ★ rust enthusiast & propagandist  ★ systems programmer ★ building cool unless stuffs ★
       </div>
@@ -189,13 +189,13 @@ function LeftSidebar({ currentPage, setPage }: { currentPage: Page; setPage: (p:
 
       {/* ASCII Art */}
       <div className="mt-2 animate-pulse-glow text-retro-dim text-xs leading-tight" style={{ fontFamily: 'var(--font-terminal)' }}>
-        <pre className="text-retro-cyan opacity-200">{`
-                  ▀▀        
-████▄  ▀▀█▄ ████▄ ██  ▄████ 
-██ ██ ▄█▀██ ██ ██ ██  ██    
-████▀ ▀█▄██ ██ ██ ██▄ ▀████ 
-██                          
-▀▀                                            
+        <pre className="text-retro-cyan glow-cyan opacity-200">{`                                    
+                  ▀▀                
+████▄  ▀▀█▄ ████▄ ██  ▄████         
+██ ██ ▄█▀██ ██ ██ ██  ██            
+████▀ ▀█▄██ ██ ██ ██▄ ▀████         
+██                                  
+▀▀                                                     
 `}
         </pre>
       </div>
@@ -216,33 +216,34 @@ function RightSidebar() {
 
       <div className="flex flex-col gap-3 items-center w-full">
 
-        <div className="pixel-border bg-retro-bg p-1 w-full animate-float animate-pulse flex justify-center items-center overflow-hidden min-h-[64px]">
+        <div className="pixel-border bg-retro-bg -mt-2 p-1 w-full animate-float animate-pulse flex justify-center items-center overflow-hidden min-h-[64px]">
           <img
             src={`${import.meta.env.BASE_URL}assets/1.gif`}
-            alt="Pixel Animation 1"
+            alt="Gifs Slot"
             className={pixelArtCls}
             onError={(e) => e.currentTarget.style.display = 'none'}
           />
         </div>
 
         <div className="pixel-border bg-retro-bg p-1 w-full text-center animate-pulse-glow flex justify-center items-center">
-          <pre className="text-retro-orange text-xs leading-tight whitespace-pre inline-block -mt-3 mx-auto font-mono" style={{ fontFamily: 'var(--font-terminal)' }}>
-
-            {`
-⣇⣿⠘⣿⣿⣿⡿⡿⣟⣟⢟⢟⢝⠵⡝⣿⡿⢂⣼⣿⣷⣌⠩⡫⡻⣝⠹⢿⣿⣷
-⡆⣿⣆⠱⣝⡵⣝⢅⠙⣿⢕⢕⢕⢕⢝⣥⢒⠅⣿⣿⣿⡿⣳⣌⠪⡪⣡⢑⢝⣇
-⡆⣿⣿⣦⠹⣳⣳⣕⢅⠈⢗⢕⢕⢕⢕⢕⢈⢆⠟⠋⠉⠁⠉⠉⠁⠈⠼⢐⢕⢽
-⡗⢰⣶⣶⣦⣝⢝⢕⢕⠅⡆⢕⢕⢕⢕⢕⣴⠏⣠⡶⠛⡉⡉⡛⢶⣦⡀⠐⣕⢕
-⡝⡄⢻⢟⣿⣿⣷⣕⣕⣅⣿⣔⣕⣵⣵⣿⣿⢠⣿⢠⣮⡈⣌⠨⠅⠹⣷⡀⢱⢕
-⡝⡵⠟⠈⢀⣀⣀⡀⠉⢿⣿⣿⣿⣿⣿⣿⣿⣼⣿⢈⡋⠴⢿⡟⣡⡇⣿⡇⡀⢕
-⡝⠁⣠⣾⠟⡉⡉⡉⠻⣦⣻⣿⣿⣿⣿⣿⣿⣿⣿⣧⠸⣿⣦⣥⣿⡇⡿⣰⢗⢄
-⠁⢰⣿⡏⣴⣌⠈⣌⠡⠈⢻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣬⣉⣉⣁⣄⢖⢕⢕⢕
-⡀⢻⣿⡇⢙⠁⠴⢿⡟⣡⡆⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣵⣵⣿
-⡻⣄⣻⣿⣌⠘⢿⣷⣥⣿⠇⣿⣿⣿⣿⣿⣿⠛⠻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
-⣷⢄⠻⣿⣟⠿⠦⠍⠉⣡⣾⣿⣿⣿⣿⣿⣿⢸⣿⣦⠙⣿⣿⣿⣿⣿⣿⣿⣿⠟
-⡕⡑⣑⣈⣻⢗⢟⢞⢝⣻⣿⣿⣿⣿⣿⣿⣿⠸⣿⠿⠃⣿⣿⣿⣿⣿⣿⡿⠁⣠
-⡝⡵⡈⢟⢕⢕⢕⢕⣵⣿⣿⣿⣿⣿⣿⣿⣿⣿⣶⣶⣿⣿⣿⣿⣿⠿⠋⣀⣈⠙
-⡝⡵⡕⡀⠑⠳⠿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠿⠛⢉⡠⡲⡫⡪⡪⡣
+          <pre className="text-retro-red glow-red opacity-200 text-xs leading-tight whitespace-pre inline-block -mt-3 mx-auto font-mono" style={{ fontFamily: 'var(--font-terminal)' }}>{`
+⠀⠀⢀⣤⣤⣤⣤⣤⣤⣀⡀⠀⠀⢀⣤⡴⠂⠀⣠⣤⣤⣤⣤⡤⠀⠀⠀⠀
+⢀⣼⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠏⢀⣴⣿⣿⣿⠟⠁⠀⠀⠀⠀⠀⠀
+⡼⠋⠉⠉⠉⠉⠙⠛⠛⠋⣩⣿⡟⠁⢀⣾⣿⣿⣿⠏⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⣴⣿⣿⠏⠁⠀⣿⣿⣿⣿⡏⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⢰⣿⣿⣿⠀⠀⢸⣿⣿⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⣿⣿⠀⠀⠸⣿⣿⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⣿⣿⡀⠀⠘⣿⣿⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⣀⣤⣶⣶⣶⣿⣿⣿⣿⡇⠀⢸⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠘⠉⠉⠉⠙⢿⣿⣿⣿⣿⡇⠀⢸⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⢹⣿⣿⣿⣿⠀⠀⣿⣿⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠠⠖⠶⢶⣶⣾⣿⣿⣿⠁⠀⢸⣿⣿⡿⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠈⢿⣿⣿⡏⠀⢀⣾⣿⠟⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⡿⠁⢀⣾⠟⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⣠⣿⡟⢁⣴⣟⣡⣤⣤⣶⣶⣶⣶⣶⣦⣤⣀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⣾⣿⣟⣴⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣦⣴⠞
+⠀⠀⠀⠀⣀⣿⡿⠿⠛⠛⠋⠉⠉⠉⠉⠉⠉⠛⠛⣿⣿⣿⣿⣿⣿⠟⠁⠀
+⠀⠀⠀⠚⠋⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⠻⠟⠁⠀⠀⠀
 `}
           </pre>
         </div>
@@ -250,16 +251,16 @@ function RightSidebar() {
         <div className="pixel-border bg-retro-bg p-1 w-full flex justify-center items-center overflow-hidden min-h-[64px]">
           <img
             src={`${import.meta.env.BASE_URL}assets/2.gif`}
-            alt="Pixel Animation 2"
+            alt="Gifs Slot"
             className={pixelArtCls}
             onError={(e) => e.currentTarget.style.display = 'none'}
           />
         </div>
 
-        <div className="pixel-border bg-retro-bg p-2 w-full relative min-h-[70px] flex items-center justify-center overflow-hidden">
+        <div className="pixel-border bg-retro-bg p-1 w-full relative min-h-[56px] flex items-center justify-center overflow-hidden">
           <img
             src={`${import.meta.env.BASE_URL}assets/3.gif`}
-            alt="decor"
+            alt="Gifs Slot"
             className="absolute inset-0 w-full h-full object-cover animate-pulse-glow opacity-120 [image-rendering:pixelated]"
           />
           <div className="relative z-10 text-retro-cyan text-xs font-mono" style={{ fontFamily: 'var(--font-terminal)' }}>
@@ -292,7 +293,7 @@ function AboutPage() {
         </p>
         <p>
           my main jam is building hack/dev/utility tools & HPC kernels libs — things like{' '}
-          <span className="text-retro-pink">remote storage systems</span>,{' '}
+          <span className="text-retro-pink">small micro-systems/utilities</span>,{' '}
           <span className="text-retro-green">graph, lsm databases</span>,{' '}
           <span className="text-retro-purple">BLAS re-implementations</span>, and{' '}
           <span className="text-retro-orange">network/ml compute/search libs.</span> {' '}
@@ -302,7 +303,7 @@ function AboutPage() {
           current projects i'm tinkering with:
         </p>
         <ul className="list-none space-y-1 ml-4">
-          <li><span className="text-retro-cyan">▸</span> <span className="text-retro-yellow">rdrive</span> — distributed zero-trust object storage</li>
+          <li><span className="text-retro-cyan">▸</span> <span className="text-retro-yellow">rdrive</span> — distributed zero-trust object storage/streaming node</li>
           <li><span className="text-retro-cyan">▸</span> <span className="text-retro-yellow">blaze-db/hnsw-rs</span> — rust-native vector database using HNSW indexing</li>
           <li><span className="text-retro-cyan">▸</span> <span className="text-retro-yellow">blas-rs</span> — openblas implementation in rust</li>
           <li><span className="text-retro-cyan">▸</span> <span className="text-retro-yellow">ghost-sync</span> — async networking lib for game dev/general utility</li>

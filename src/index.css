@@ -9,6 +9,7 @@
   --color-retro-cyan: #00e5ff;
   --color-retro-green: #39ff14;
   --color-retro-pink: #ff6ec7;
+  --color-retro-red: #e01d1d;
   --color-retro-yellow: #ffe135;
   --color-retro-purple: #bf5fff;
   --color-retro-orange: #ff6b35;
@@ -145,23 +146,23 @@ body {
 /* Float animation for decorations */
 @keyframes float {
   0% {
-    transform: translateY(0px) rotate(-2deg);
+    transform: translateY(0px) rotate(-1deg);
   }
 
   25% {
-    transform: translateY(-6px) rotate(2deg);
+    transform: translateY(-6px) rotate(1deg);
   }
 
   50% {
-    transform: translateY(0px) rotate(-2deg);
+    transform: translateY(0px) rotate(-1deg);
   }
 
   75% {
-    transform: translateY(6px) rotate(2deg);
+    transform: translateY(6px) rotate(1deg);
   }
 
   100% {
-    transform: translateY(0px) rotate(-2deg);
+    transform: translateY(0px) rotate(-1deg);
   }
 }
 
