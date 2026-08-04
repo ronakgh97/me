@@ -1,1 +1,1 @@
-![look](./public/assets/site-look.png)
+Personal site built with [Zola](https://www.getzola.org/)
