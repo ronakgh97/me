@@ -22,7 +22,7 @@ github_alerts = true
 
 [extra]
 default_theme = "dark"
-accent_color = "#4991e3"
+accent_color = "#fe8019"
 show_reading_time = true
 show_share_button = true
 show_copy_button = true
