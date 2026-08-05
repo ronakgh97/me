@@ -34,7 +34,7 @@
 
 	{%- include "partials/variables.html" %}
 
-	{%- set styles = [ "style.css" ] %}
+	{%- set styles = [ "style.css", "icons.css" ] %}
 
 	{%- if config.extra.bundled_fonts %}
 		{%- set styles = styles | concat(with=["fonts.css"]) %}
@@ -93,6 +93,10 @@
 
 	{%- if config.extra.nav.show_theme_switcher %}
 		{%- set scripts = scripts | concat(with=["theme-switcher.js"]) %}
+	{%- endif %}
+
+	{%- if config.extra.nav.show_accent_switcher %}
+		{%- set scripts = scripts | concat(with=["accent-switcher.js"]) %}
 	{%- endif %}
 
 	{%- if page.extra.comments.id %}

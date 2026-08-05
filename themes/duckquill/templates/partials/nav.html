@@ -26,7 +26,7 @@
 							<summary>{{- macros_translate::translate(key=link.name, default=link.name, language_strings=language_strings) -}}</summary>
 							<ul>
 								{%- for link in link.menu -%}
-									{%- if link.url is matching('https?://') %}
+									{%- if link.url is matching('^https?://') %}
 										<li>
 											<a href="{{ link.url }}" rel="{{ rel_attributes }}" class="external">
 												{{- macros_translate::translate(key=link.name, default=link.name, language_strings=language_strings) -}}
@@ -46,7 +46,7 @@
 							</ul>
 						</details>
 			 		 </li>
-				{%- elif link.url is matching('https?://') %}
+				{%- elif link.url is matching('^https?://') %}
 					<li>
 						<a href="{{ link.url }}" rel="{{ rel_attributes }}" class="external">
 							{{- macros_translate::translate(key=link.name, default=link.name, language_strings=language_strings) -}}
@@ -73,7 +73,7 @@
 			{%- if config.languages | length > 0 %}
 				{%- include "partials/language_switcher.html" %}
 			{%- endif -%}
-			{%- if config.extra.default_theme or config.extra.nav.show_theme_switcher  %}
+			{%- if config.extra.default_theme and config.extra.nav.show_theme_switcher != false or config.extra.nav.show_theme_switcher %}
 				<li id="theme-switcher">
 					<details class="closable">
 						<summary class="circle" title="{{ macros_translate::translate(key='theme', default='Theme', language_strings=language_strings) }}">
@@ -95,6 +95,22 @@
 									<i class="icon"></i>
 								</button>
 							</li>
+						</ul>
+					</details>
+				</li>
+			{%- endif %}
+			{%- if config.extra.nav.show_accent_switcher %}
+				<li id="accent-switcher">
+					<details class="closable">
+						<summary class="circle" title="Accent color">
+							<span style="display:inline-block;width:12px;height:12px;border-radius:50%;background:var(--accent-color);border:2px solid var(--fg-color);"></span>
+						</summary>
+						<ul>
+							<li><button class="accent-btn" data-color="#fe8019" title="Gruvbox Orange" style="background:#fe8019;width:20px;height:20px;border-radius:50%;border:2px solid transparent;cursor:pointer;"></button></li>
+							<li><button class="accent-btn" data-color="#89b4fa" title="Catppuccin" style="background:#89b4fa;width:20px;height:20px;border-radius:50%;border:2px solid transparent;cursor:pointer;"></button></li>
+							<li><button class="accent-btn" data-color="#5e81ac" title="Nord" style="background:#5e81ac;width:20px;height:20px;border-radius:50%;border:2px solid transparent;cursor:pointer;"></button></li>
+							<li><button class="accent-btn" data-color="#7aa2f7" title="Tokyo Night" style="background:#7aa2f7;width:20px;height:20px;border-radius:50%;border:2px solid transparent;cursor:pointer;"></button></li>
+							<li><button class="accent-btn" data-color="#268bd2" title="Solarized" style="background:#268bd2;width:20px;height:20px;border-radius:50%;border:2px solid transparent;cursor:pointer;"></button></li>
 						</ul>
 					</details>
 				</li>
