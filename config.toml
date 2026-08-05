@@ -28,7 +28,6 @@ styles = ["gruvbox.css"]
 
 [extra.nav]
 show_theme_switcher = true
-show_accent_switcher = true
 show_repo = true
 links = [
     { name = "Blog", url = "@/blog/_index.md" },
