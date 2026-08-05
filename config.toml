@@ -2,15 +2,12 @@ title = "ronakgh97"
 description = "systems engineer | rust programmer"
 base_url = "https://ronakgh97.github.io/me/"
 theme = "duckquill"
-
 compile_sass = true
 minify_html = true
 build_search_index = true
 author = "Ronak Ghosh"
 default_language = "en"
 taxonomies = [{ name = "tags" }]
-# generate_feeds = true
-# feed_filenames = ["rss.xml", "atom.xml"]
 
 [search]
 index_format = "fuse_json"
@@ -23,18 +20,18 @@ github_alerts = true
 [extra]
 default_theme = "dark"
 accent_color = "#fe8019"
+emoji_favicon = "🐦‍🔥"
 show_reading_time = true
 show_share_button = true
 show_copy_button = true
 styles = ["gruvbox.css"]
 
 [extra.nav]
-show_feed = true
 show_theme_switcher = true
 show_repo = true
 links = [
-    { name = "blog", url = "@/blog/_index.md" },
-    { name = "resume", url = "/resume.pdf" },
+    { name = "Blog", url = "@/blog/_index.md" },
+    { name = "Resume", url = "/resume.pdf" },
 ]
 
 [extra.footer]

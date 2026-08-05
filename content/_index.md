@@ -34,9 +34,9 @@ when I need to glue things together quickly or do some _AI & Kernels prototyping
 ### What are my PC specs?
 
 - **Laptop** - ASUS TUF Gaming F16 (2026)
-- **GPU**    - NVIDIA RTX 5060 (8 GB)
-- **RAM**    - 16 GB
 - **CPU**    - Intel Core i7-14650HX
+- **RAM**    - 16 GB
+- **GPU**    - NVIDIA RTX 5060 (8 GB)
 
 ### What keyboard do I use?
 
