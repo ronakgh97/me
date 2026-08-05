@@ -4,23 +4,23 @@ title = "Home"
 
 # Ronak Ghosh
 
-Hi 😊, Welcome to my personal site. I am a _systems/perf engineer_ and first-year undergraduate based somewhere between
+Hi, Welcome to my personal site. I am a _systems/perf engineer_ and first-year undergraduate based somewhere between
 compilers and cpu cache lines.
 
 I spend most of my time writing **Rust** — `databases internals`, `runtimes`, `maths` & `utility libraries/tools`,
 `networking` stacks, `game dev` — you name it, I've probably tried to rewrite it in Rust. I like understanding how CPUs
 and software work together at a basic level.
 
-When I'm not fighting the sleep cortisol demon 😈 at 3:27 AM, I'm probably reading about _x86, distributed systems, or
-performance engineering_. I'm also working on some ridiculous side project, or learning about yet another topic that
-I'll implement from scratch for "educational purposes."
+When I'm not fighting the **sleep cortisol demon** at _3:27 AM_, I'm probably reading about _x86, distributed systems,
+or performance engineering_. I'm also working on some ridiculous side project, or learning about yet another topic that
+I'll implement from scratch for **"educational purposes"**.
 
 ## More about my setup & me
 
 ### What editor do I use?
 
-I alternate between **RustRover** for heavier Rust projects, **Helix** for quick edits (coping with VIM 😔), and **Zed**
-because of FOMO. I use **Gruvbox** medium dark with **Fira Code** font.
+I alternate between **RustRover** for heavier Rust projects, **Helix** for quick edits _(coping with VIM)_, and **Zed**
+because of FOMO. I use **Gruvbox** Dark Medium with **Fira Code** Retina font.
 
 ### What languages do I work with?
 
@@ -51,13 +51,15 @@ when I need to glue things together quickly or do some _AI & Kernels prototyping
 
 ### What are my current projects?
 
-- **[rdrive](https://github.com/ronakgh97/rdrive)** — distributed zero-trust object storage/streaming node
-- **[hnsw-rs](https://github.com/ronakgh97/hnsw-rs)** — Generic HNSW implementation for nearest neighbor search
-- **[blas-rs](https://github.com/ronakgh97/blas-rs)** — OpenBLAS implementation for x86-64 in Rust
-- **[hydra-sync](https://github.com/ronakgh97/hydra-sync)** — async SPMC lib for game dev/general utility
-- **[missile-sim](https://github.com/ronakgh97/missile-sim)** — missile guidance simulation/sandbox engine/library
+- **[rdrive](https://github.com/ronakgh97/rdrive)** — distributed `zero-trust object storage`/streaming node
+- **[hnsw-rs](https://github.com/ronakgh97/hnsw-rs)** — Generic `HNSW implementation` for nearest neighbor search
+- **[blas-rs](https://github.com/ronakgh97/blas-rs)** — `OpenBLAS implementation` for x86-64 in Rust
+- **[hydra-sync](https://github.com/ronakgh97/hydra-sync)** — `async SPMC` lib for game dev/general utility
+- **[missile-sim](https://github.com/ronakgh97/missile-sim)** — missile `guidance simulation`/sandbox engine/library
 
 ### What's my long-term goal?
 
-Build `performance-critical` libraries and pieces of software that could be used in scale. Short-term: get `blas-rs`
-widely used and build ML libraries around it. Shortest-term: maintain a sleep schedule like a normal human.
+Build `performance-critical` **libraries** and **pieces of software** that could be used in scale. Short-term: get
+`blas-rs`widely used and build **ML libraries** around it.
+
+![End-of-site](https://wallpapercave.com/wp/wp14267772.jpg)
