@@ -44,10 +44,10 @@ when I need to glue things together quickly or do some _AI & Kernels prototyping
 
 ### What games do I play often?
 
-- **Battlefield 2042** — when I feel like running around aimlessly
-- **Genshin Impact** — for the story, the waifus and mostly THE HIDDEN LORE
-- **Beyond All Reason** — big brain RTS, factory must grow
-- **Pokémon Showdown** — competitive battling, because I never outgrew it
+- **Battlefield 2042** — when I feel like running around & blowing things up `I play casper only `
+- **Genshin Impact** — for the story, the waifus and mostly THE HIDDEN LORE `I have C1 Hutao`
+- **Beyond All Reason** — big brain RTS, factory must grow `I believe in Cortex supremacy`
+- **Pokémon Showdown** — competitive battling, because I never outgrew it `Gen5 OU only`
 
 ### What are my current projects?
 
@@ -61,5 +61,3 @@ when I need to glue things together quickly or do some _AI & Kernels prototyping
 
 Build `performance-critical` **libraries** and **pieces of software** that could be used in scale. Short-term: get
 `blas-rs`widely used and build **ML libraries** around it.
-
-![End-of-site](https://wallpapercave.com/wp/wp14267772.jpg)

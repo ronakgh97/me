@@ -5,7 +5,7 @@ date = 2026-07-11
 template = "article.html"
 
 [taxonomies]
-tags = ["hpc", "x86-64", "maths", "simd"]
+tags = ["hpc", "maths", "x86-64", "simd"]
 
 [extra]
 go_to_top = true
