@@ -12,8 +12,10 @@ I spend most of my time writing **Rust** — `databases internals`, `runtimes`, 
 and software work together at a basic level.
 
 When I'm not fighting the **sleep cortisol demon** at _3:27 AM_, I'm probably reading about _x86, distributed systems,
-or performance engineering_. I'm also working on some ridiculous side project, or learning about yet another topic that
-I'll implement from scratch for **"educational purposes"**.
+or performance engineering_. I'm also working on some small side projects, or learning about yet another topic that I'll
+implement from scratch for **"educational purposes"**.
+
+---
 
 ## More about my setup & me
 
@@ -24,8 +26,9 @@ because of FOMO. I use **Gruvbox** Dark Medium with **Fira Code** Retina font.
 
 ### What languages do I work with?
 
-Mostly **Rust**, sometimes **Python**. Rust is my default for _anything performance-critical or systems-level_. Python
-when I need to glue things together quickly or do some _AI & Kernels prototyping_ and college works.
+Mostly **Rust**, sometimes **Python** and sometimes **Perl**. Rust is my default for _anything performance-critical or
+systems-level_. Python when I need to glue things together quickly or do some _AI & Kernels prototyping_ and college
+works. Perl...well, I kinda like it.
 
 ### What operating system do I use?
 
@@ -61,3 +64,7 @@ when I need to glue things together quickly or do some _AI & Kernels prototyping
 
 Build `performance-critical` **libraries** and **pieces of software** that could be used in scale. Short-term: get
 `blas-rs`widely used and build **ML libraries** around it.
+
+---
+
+**Hey...Keep going 😊. Better days will surely come.**

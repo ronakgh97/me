@@ -8,6 +8,8 @@
       <excludeFolder url="file://$MODULE_DIR$/public/projects" />
       <excludeFolder url="file://$MODULE_DIR$/public/resume" />
       <excludeFolder url="file://$MODULE_DIR$/public/tags" />
+      <excludeFolder url="file://$MODULE_DIR$/.idea/dictionaries" />
+      <excludeFolder url="file://$MODULE_DIR$/public" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
