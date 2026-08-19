@@ -17,6 +17,10 @@ smart_punctuation = true
 bottom_footnotes = true
 github_alerts = true
 
+# [markdown.highlighting]
+# light_theme = "solarized-light"
+# dark_theme = "solarized-dark"
+
 [extra]
 default_theme = "dark"
 accent_color = "#fe8019"

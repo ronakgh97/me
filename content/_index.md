@@ -4,16 +4,16 @@ title = "Home"
 
 # Ronak Ghosh
 
-Hi, Welcome to my personal site. I am a _systems/perf engineer_ and first-year undergraduate based somewhere between
-compilers and cpu cache lines.
+Hi, Welcome to my personal site. I am a _systems/perf engineer_ and first-year undergraduate based somewhere between a
+compiler and profiler.
 
-I spend most of my time writing **Rust** — `databases internals`, `runtimes`, `maths` & `utility libraries/tools`,
-`networking` stacks, `game dev` — you name it, I've probably tried to rewrite it in Rust. I like understanding how CPUs
-and software work together at a basic level.
+I spend most of my time writing **Rust** — `databases internals`, `search engines`, `runtimes`, `SIMD kernels`,
+`networking`, `games` and `utility tools`, — you name it, I've probably tried to rewrite it in Rust. I like
+understanding how CPUs and software work together at a basic level.
 
 When I'm not fighting the **sleep cortisol demon** at _3:27 AM_, I'm probably reading about _x86, distributed systems,
-or performance engineering_. I'm also working on some small side projects, or learning about yet another topic that I'll
-implement from scratch for **"educational purposes"**.
+random Intel manuals, or performance engineering_. I'm also working on some small side projects, or learning about yet
+another topic that I'll implement from scratch for **"educational purposes"**.
 
 ---
 
@@ -43,7 +43,7 @@ works. Perl...well, I kinda like it.
 
 ### What keyboard do I use?
 
-**Kreo Swarm 75%** — a solid budget full-white mechanical keyboard, been using it for almost over 1 year now.
+**Kreo Swarm 75%** — a solid budget **full-white mechanical keyboard**, been using it for almost over 1 year now.
 
 ### What games do I play often?
 
@@ -55,8 +55,8 @@ works. Perl...well, I kinda like it.
 ### What are my current projects?
 
 - **[rdrive](https://github.com/ronakgh97/rdrive)** — distributed `zero-trust object storage`/streaming node
-- **[hnsw-rs](https://github.com/ronakgh97/hnsw-rs)** — Generic `HNSW implementation` for nearest neighbor search
-- **[blas-rs](https://github.com/ronakgh97/blas-rs)** — `OpenBLAS implementation` for x86-64 in Rust
+- **[hnsw-rs](https://github.com/ronakgh97/hnsw-rs)** — generic `HNSW implementation` for nearest neighbor search
+- **[blas-rs](https://github.com/ronakgh97/blas-rs)** — `openBLAS implementation` for x86-64 in Rust
 - **[hydra-sync](https://github.com/ronakgh97/hydra-sync)** — `async SPMC` lib for game dev/general utility
 - **[missile-sim](https://github.com/ronakgh97/missile-sim)** — missile `guidance simulation`/sandbox engine/library
 

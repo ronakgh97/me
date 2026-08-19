@@ -1,5 +1,5 @@
 +++
-title = "Bookmarks"
+title = "Bookmarking stuffs on the internet"
 template = "bookmarks.html"
 
 [extra]
