@@ -16,3 +16,5 @@ and [i_amax](https://www.intel.com/content/www/us/en/docs/onemkl/developer-refer
 compute the *Euclidean distance* between vectors and finds *the index of the maximum absolute value*, respectively. The
 SIMD implementation is straight-forward, but with few caveats to consider, for `nrm2`, we need to handle overflow and
 for `i_amax`, vectorizing the stupid scalar loop is... _fragile?_, given with few notable edge cases.
+
+--- TODO ---

@@ -23,9 +23,9 @@ something like this;
 RGB Channels
 
 [R0, G0, B0, A0]    [R0, R1, R2, R3, R4]
-[R1, G1, B1, A1] -> [G0, G1, G2, G3, G4]
+[R1, G1, B1, A1] <- [G0, G1, G2, G3, G4]
 [R2, G2, B2, A2]    [B0, B1, B2, B3, B4]
-[R3, G3, B3, A3] <- [A0, A1, A2, A3, A4]
+[R3, G3, B3, A3] -> [A0, A1, A2, A3, A4]
 [R4, G4, B4, A4]
 ```
 
