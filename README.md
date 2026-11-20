@@ -1,1 +1,1 @@
-Personal site built with [Zola](https://www.getzola.org/)
+Personal site built with just one HTML file.

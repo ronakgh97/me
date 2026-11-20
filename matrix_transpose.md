@@ -1,20 +1,8 @@
-+++
-title = "Some SIMD techniques and usages"
-description = "A collection of SIMD techniques for fast linear algebra operations or general optimizations on x86-64 architecture."
-date = 2026-08-02
-template = "article.html"
-
-[taxonomies]
-tags = ["bit-manipulation", "performance", "x86-64", "simd"]
-
-[extra]
-go_to_top = true
-+++
-
 ## Matrix Transposing
 
-Since **matrices** are so famous in linear algebra space, let's transpose a matrix in most optimal way. This operation
-can be called `SOA` (Structure of Arrays) to `AOS` (Array of Structures) transformation...I guess, and it is a common
+Since **matrices** are widely known in linear algebra space,
+let's transpose a matrix in most optimal way. This operation
+can be called `SOA` (Structure of Arrays) to `AOS` (Array of Structures) transformation, and it is a common
 operation in graphics programming, physics simulations, and other applications that require efficient data access
 patterns. Something known as `Data Swizzling` and `Data Deswizzling`, both of which allows us to go back & forth between
 something like this;
@@ -49,7 +37,7 @@ matrices, since every write jumps by `rows` elements, so CPU-chan has to fetch m
 L1/L2, TLB and everything**. To improve this we can use
 **[blocking technique](https://suif.stanford.edu/papers/lam-asplos91.pdf)**, which is a pretty common optimization way
 to handle this. The idea is to divide the matrix into smaller blocks _(fits inside L1/L2)_ and process each block
-separately, boths read & write stays inside few cache lines, which improves cache locality and reduces cache misses.
+separately, both read & write stays inside few cache lines, which improves cache locality and reduces cache misses.
 
 Tiled implementation would be;
 
@@ -62,8 +50,9 @@ pub fn mat_transpose_tiled(src: &[f32], dst: &mut [f32], rows: usize, cols: usiz
 
     for ii in (0..rows).step_by(TILE) {
         for jj in (0..cols).step_by(TILE) {
-            // we all inside 64x64 block, 
-            // process each and handle last block which may be smaller than 64x64
+            // we all inside 64x64 block,
+            // process each and handle
+            // the last block which may be smaller than 64x64
             let i_end = (ii + TILE).min(rows);
             let j_end = (jj + TILE).min(cols);
 
@@ -136,8 +125,8 @@ test scratch::mat_transpose::test_perf ... ok
 
 Not bad, almost **3.6x faster** than native implementation, but we are not done yet, we can use **SIMD deez nu-...**
 Since the data in `src` is **contiguous** (row major), we can load multiple values, `"swizzling"` them, simply store
-them into `dst` in row major way. _"Wait, Why we can write directly in `dst` memory, its column major, right?"_ -
-because now, after `"swizzling"` the registers already contain same layout as `dst`.
+them into `dst` in row major way. _"Wait, Why we can write directly in `dst` memory, its column major (physically),
+right?"_ - because now, after `"swizzling"` the registers already contain same layout as `dst`.
 
 ```text
 Before:
@@ -156,6 +145,7 @@ Notice each earlier reg0/reg0 contain rows of `src`, (contiguous load), after `"
 `dst` - its physically strided, otherwise it would defeat the whole purpose of using **SIMD deez nu-**... _sigh_.
 
 Ok let's look inside the `"swizlling"` part, but before that, since _I am not a AVX512 larper_ (don't have capable CPU).
+
 I
 have [Intel I7 14650hx](https://www.intel.com/content/www/us/en/products/sku/235996/intel-core-i7-processor-14650hx-30m-cache-up-to-5-20-ghz/specifications.html),
 has mostly all goody `AVX2` features, and it gives us full `256-bit` registers, so we can process only 8 `f32` value at
@@ -272,7 +262,7 @@ Here `src1` is `[a00 a10 a20 a30 | a04 a14 a24 a34]` and `src2` is `[a40 a50 a60
 "cross" them, so we write `0b00 10 00 00`: for lower half of dst, it passes lower 4bit of `control byte`, so `00 00`
 means take lower half of `src1`, **2nd bit is ignored** and 3rd bit is `0`, since we don't want to zeroed out that. So
 similarly, for upper half of `dst`, take upper 4bit of `control byte`, so again `00 10` means take lower half of `src2`.
-There you have it, the "cross" is complete (after we do similiar operation for `0b00 11 00 01`), and we can write the
+There you have it, the "cross" is complete (after we do similar operation for `0b00 11 00 01`), and we can write the
 `dst` memory in row-major order, which is contiguous now.
 
 So finally AVX2 implementation would be;
@@ -291,8 +281,8 @@ unsafe fn transpose_8x8_avx2(src: *const f32, src_stride: usize, dst: *mut f32, 
         let r7 = _mm256_loadu_ps(src.add(src_stride * 7));
 
         // interleave adjacent pairs
-        let t0 = _mm256_unpacklo_ps(r0, r1); // take first 4 elements of r0 and r1
-        let t1 = _mm256_unpackhi_ps(r0, r1); // take last 4 elements of r0 and r1
+        let t0 = _mm256_unpacklo_ps(r0, r1); // take first 4 (lower 2 each) elements of r0 and r1
+        let t1 = _mm256_unpackhi_ps(r0, r1); // take last 4 (high 2 each) elements of r0 and r1
         let t2 = _mm256_unpacklo_ps(r2, r3); // repeat for others...
         let t3 = _mm256_unpackhi_ps(r2, r3);
         let t4 = _mm256_unpacklo_ps(r4, r5);
@@ -350,10 +340,11 @@ test scratch::mat_transpose::test_perf ... ok
 BOOM!!!, almost **13.0x** over native and **4.0x** speedup over tiled implementation, and now...we can stop here, since
 matrix transpose is `memory bound`, there is nothing to compute here (zero math), just data moving (CPU-chan remains
 IDLE for data to arrive). Therefore, **multi-threading** is not going to help here on my consumer chip, my memory
-dual-channel bandwidth maxed out at ~80-90GB/s _(CUDA larper can go away)_.
+dual-channel bandwidth maxed out at ~80-90GB/s, though it may help in very large matrix sizes. _(CUDA larper can go
+away)_.
 
 Checkout my project [blas-rs](https://github.com/ronakgh97/blas-rs) - **BLAS** implementation in pure modern Rust for
-x86-64 CPUs
+x86-64 CPUs (fp32 only).
 
 ---
 

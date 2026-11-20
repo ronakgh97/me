@@ -1,0 +1,322 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>ronak ghosh's site</title>
+    <meta name="description" content="no description."/>
+    <style>
+        body {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 13px;
+            line-height: 1.6;
+            background: #ffffff;
+            color: #000000;
+            margin: 0;
+            padding: 16px;
+        }
+        .page {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        h1 {
+            font-family: "Times New Roman", Times, serif;
+            font-size: 34px;
+            margin: 0 0 4px;
+            letter-spacing: 1px;
+        }
+        .tag {
+            margin: 0 0 12px;
+            color: #333;
+        }
+        nav {
+            margin: 12px 0;
+        }
+        nav a {
+            display: inline-block;
+            background: #c0c0c0;
+            color: #000;
+            text-decoration: none;
+            border: 2px outset #ffffff;
+            padding: 2px 10px;
+            margin-right: 4px;
+            font-size: 12px;
+        }
+        nav a:active {
+            border-style: inset;
+        }
+        a {
+            color: #0000ee;
+        }
+        a:hover {
+            background: #ffff00;
+        }
+        h2 {
+            font-size: 13px;
+            background: #c0c0c0;
+            border: 1px solid #000;
+            padding: 2px 6px;
+            margin: 28px 0 8px;
+        }
+        hr {
+            border: none;
+            border-top: 1px solid #000;
+            margin: 16px 0;
+        }
+        .box {
+            border: 1px solid #000;
+            background: #ffffe1;
+            padding: 8px 12px;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        ul.projects li {
+            margin-bottom: 8px;
+        }
+        .arch {
+            color: #666;
+            font-size: 11px;
+        }
+        .red {
+            color: #ff0000;
+            font-weight: bold;
+            font-size: 11px;
+        }
+        .blink {
+            animation: blink 1s steps(1) infinite;
+        }
+        @keyframes blink {
+            50% {
+                opacity: 0;
+            }
+        }
+        .btns a {
+            display: inline-block;
+            background: #c0c0c0;
+            color: #000;
+            text-decoration: none;
+            border: 2px outset #ffffff;
+            padding: 2px 10px;
+            margin: 2px 4px 2px 0;
+            font-size: 12px;
+        }
+        .btns a:active {
+            border-style: inset;
+        }
+        footer {
+            margin-top: 32px;
+            padding-top: 8px;
+            border-top: 1px solid #000;
+            font-size: 11px;
+            text-align: center;
+            color: #333;
+        }
+        .counter {
+            font-family: "Courier New", monospace;
+            background: #000;
+            color: #00ff00;
+            padding: 2px 8px;
+            letter-spacing: 2px;
+        }
+        marquee {
+            font-size: 12px;
+            color: #333;
+        }
+        @media (max-width: 600px) {
+            body {
+                padding: 8px;
+            }
+            h1 {
+                font-size: 26px;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+    <header>
+        <h1>ronak ghosh</h1>
+        <p class="tag">
+            unemployed cs undergrad, 19yo. i write <i>safe</i> rust and
+            use omarchy btw.
+        </p>
+    </header>
+
+    <marquee scrollamount="8">
+        +++ welcome to my page +++ thanks for stopping by +++ all code
+        on github +++ contact me via email or twitter +++
+    </marquee>
+    <hr/>
+
+    <main>
+        <section id="about">
+            <h2>about me</h2>
+            <div class="box">
+                <p>
+                    hi, i'm ronak. i'm a sophomore, i like building
+                    small fast durable system in rust and focus on
+                    performance-aware programming — databases, parsers,
+                    inference runtimes, networking and compute
+                    libraries. mostly interested in building from
+                    scratch, and learning about underlying layers, and
+                    making them fast.
+                </p>
+
+                <p>
+                    this page is intentionally simple: plain html + a
+                    little css. no frameworks, no trackers, no bloat.
+                    just like old internet.
+                </p>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2>some of my works</h2>
+            <ul class="projects">
+                <li>
+                    <a href="https://github.com/ronakgh97/blas-rs"
+                    >blas-rs</a
+                    >
+                    <span class="red blink">HOT!</span> — OpenBLAS/Intel
+                    MKL implementation in pure rust, x86_64 and fp32
+                    only.
+                </li>
+                <li>
+                    <a href="https://github.com/ronakgh97/hnsw-rs"
+                    >hnsw-rs</a
+                    >
+                    <span class="red blink">HOT!</span>
+                    — generic implementation of hierarchical NSW from
+                    the paper, with hand-tuned portable SIMD in pure
+                    rust.
+                </li>
+                <li>
+                    <a href="https://github.com/ronakgh97/onnx-rs"
+                    >onnx-rs</a
+                    >
+                    <span class="red blink">HOT!</span>
+                    — minimal onnx runtime for fp32 models on x86_64
+                    CPU, using pure rust, no python, no ffi or c++.
+                </li>
+                <li>
+                    <a href="https://github.com/ronakgh97/mini-db"
+                    >mini-db</a
+                    >
+                    — lightweight bit-cast style, fast tokio-async KV
+                    index with WAL backend and sharding for durability
+                    and peak throughput.
+                </li>
+                <li>
+                    <a href="https://github.com/ronakgh97/parallelos"
+                    >parallelos</a
+                    >
+                    <span class="red blink">HOT!</span>
+                    — thread task scheduling library for HPC that
+                    implements a mixture of known scheduling algorithms.
+                </li>
+                <li>
+                    <a href="https://github.com/ronakgh97/esrgan-rs"
+                    >esrgan-rs</a
+                    >
+                    <span class="red blink">HOT!</span>
+                    — original ESRGAN (16.7M params) implementation in
+                    pure rust, AVX2 for x86_64 and portable SIMD
+                    elsewhere.
+                </li>
+                <li>
+                    <a href="https://github.com/ronakgh97/relay"
+                    >relay</a
+                    >
+                    — simple, super fast, duplex TCP server to transfer
+                    and receive arbitrary data from one computer to
+                    another.
+                </li>
+                <li>
+                    <a href="https://github.com/ronakgh97/"
+                    >hydra-sync</a
+                    >
+                    <span class="red blink">HOT!</span>
+                    — lightweight, zero copy e2e encrypted SPMC network
+                    library, use for relay clusters applications.
+                </li>
+                <li>
+                    <a href="https://github.com/ronakgh97/mocha"
+                    >mocha</a
+                    >
+                    — minimal cute desktop overlay tracks uptime, cpu,
+                    memory, disk, bandwidth tx/rx, keys pressed and
+                    mouse clicks.
+                </li>
+                <li>
+                    <a href="https://github.com/ronakgh97/missile-sim"
+                    >missile-sim</a
+                    >
+                    — simulates missile-target engagement scenarios
+                    using six guidance laws, used for games, sims and
+                    research purposes.
+                    <span class="arch">[archived]</span>
+                </li>
+                <li>
+                    <a href="https://github.com/ronakgh97/ghost-sync"
+                    >ghost-sync</a
+                    >
+                    — composable async network rust library for
+                    multiplayer game dev.
+                    <span class="arch">[archived]</span>
+                </li>
+            </ul>
+            <p>
+                &gt;&gt;
+                <a href="https://github.com/ronakgh97"
+                >more projects on github</a
+                >
+            </p>
+        </section>
+
+        <section id="interests">
+            <h2>interests & hobbies</h2>
+            <p>
+                performance/backend engineering, HPC and x86 intel cpus
+                &middot; playing video games (genshin, battlefield 2042,
+                ready or not, pokémon showdown and some RTS games),
+                watching anime/manga, fictional character analysis & arc
+                breakdown and sometimes cooking
+            </p>
+        </section>
+
+        <section id="contact">
+            <h2>contact / links</h2>
+            <div class="btns">
+                <a href="https://github.com/ronakgh97">github</a>
+                <a href="https://crates.io/users/ronakgh97">crates</a>
+                <a href="https://x.com/ronakgh97">twitter</a>
+                <a href="mailto:ronakgh97@gmail.com">email</a>
+                <a
+                        href="https://drive.google.com/file/d/1Ode6GuWuo1WcRrLhydV8lvDfEakDE8Gh/view"
+                >resume</a
+                >
+            </div>
+            <p>
+                email:
+                <a href="mailto:ronakgh97@gmail.com"
+                >ronakgh97@gmail.com</a
+                >
+                — fastest way to reach me.
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        <p>
+            &copy; ronak ghosh &middot; last updated: 2026-19-11 <br/>
+            best viewed at 800x600 with netscape navigator 4.0 &middot;
+            handmade with html &amp; css<br/>
+            <a href="https://github.com/ronakgh97">github</a> |
+            <a href="mailto:ronakgh97@gmail.com">email</a> |
+            <a href="https://x.com/ronakgh97">twitter</a>
+        </p>
+    </footer>
+</div>
+</body>
+</html>
