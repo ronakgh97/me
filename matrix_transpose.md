@@ -46,7 +46,7 @@ pub fn mat_transpose_tiled(src: &[f32], dst: &mut [f32], rows: usize, cols: usiz
     assert_eq!(src.len(), rows * cols);
     assert_eq!(dst.len(), rows * cols);
 
-    const TILE: usize = 64;
+    const TILE: usize = 64; // 96, 128, 256 as per CPU L1/L2 cache size
 
     for ii in (0..rows).step_by(TILE) {
         for jj in (0..cols).step_by(TILE) {
@@ -166,8 +166,7 @@ r2: [a20 a30 a21 a31 | a24 a34 a25 a35]
 r3: [a22 a32 a23 a33 | a26 a36 a27 a37]
 ```
 
-By the
-docs: [Intel doc](https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#ig_expand=4928,7054,4928,6050,7054,7054&text=_mm256_unpacklo_ps) -
+[Intel doc](https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#ig_expand=4928,7054,4928,6050,7054,7054&text=_mm256_unpacklo_ps) -
 `Unpacks and interleaves single-precision (32-bit) floating-point elements from the low/high half of each 128-bit lane in a and b`.
 
 ```text
@@ -206,8 +205,7 @@ r1: [a02 a12 a22 a32 | a06 a16 a26 a36] Ok, we see the pattern, right?
 r3: [a03 a13 a23 a33 | a07 a17 a27 a37]
 ```
 
-Again the docs
-says: [Intel doc](https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=_mm256_shuffle_ps&ig_expand=4928,6050) -
+[Intel doc](https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=_mm256_shuffle_ps&ig_expand=4928,6050) -
 `Shuffles single-precision (32-bit) floating-point elements in a within 128-bit lanes using the control in imm8`. _"What
 is IMM8?"_ - it's an 8-bit const value *(control byte)*, its instruction-specific, here it's used to select the elements
 from `a` and `b` to construct altered vector. For example, the binary value:
@@ -230,8 +228,7 @@ r0: [a00 a10 a20 a30 | a40 a50 a60 a70] Look, the whole 256bit is now first colu
 r4: [a04 a14 a24 a34 | a44 a54 a64 a74] And this is the fourth column of `dst`
 ```
 
-According to whatever docs
-says: [Intel doc](https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=_mm256_permute2f128_ps&ig_expand=4928) -
+[Intel doc](https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=_mm256_permute2f128_ps&ig_expand=4928) -
 `Shuffles 256 bits (composed of 8 packed single-precision (32-bit) floating-point elements) selected by imm8 from a and b`.
 To paint the bigger & simpler picture, `_mm256_shuffle_ps()` lets you shuffle single 32bit floats **within EACH 128bit
 lanes**, whereas `_mm256_permute2f128_ps()` lets you shuffle whole 128bit lanes **between two 256bit registers** BOTH
